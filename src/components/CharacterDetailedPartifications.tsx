@@ -6,11 +6,14 @@ interface Props {
 
 export function CharacterDetailedPartifications({ character }: Props) {
   const mainDivStyles = {
-    textAlign: "left",
+    textAlign: "left" as "left",
     backgroundColor: "green",
   };
 
-  const itemDivStyles = { textAlign: "left", backgroundColor: "green" };
+  const itemDivStyles = {
+    textAlign: "left" as "left",
+    backgroundColor: "green",
+  };
 
   const pStyles = {
     backgroundColor: "green",

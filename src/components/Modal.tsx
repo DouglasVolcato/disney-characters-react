@@ -11,7 +11,7 @@ interface Props {
 
 export function Modal({ showModalStatus, setModalFunction, character }: Props) {
   const mainDivStyles = {
-    position: "fixed",
+    position: "fixed" as "fixed",
     top: "0",
     left: "0",
     width: "100vw",

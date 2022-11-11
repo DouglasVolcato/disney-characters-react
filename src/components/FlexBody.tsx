@@ -7,7 +7,7 @@ interface Props {
 export function FlexBody({ children }: Props) {
   const divStyles = {
     display: "flex",
-    flexWrap: "wrap",
+    flexWrap: "wrap" as "wrap",
     justifyContent: "space-evenly",
   };
 
