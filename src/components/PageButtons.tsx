@@ -1,20 +1,25 @@
+import { useState } from "react";
+
 interface Props {
   pageNumber: number;
   setPageNumber: (num: number) => void;
 }
 
 export function PageButtons({ pageNumber, setPageNumber }: Props) {
+  const [hover, setHover] = useState<boolean>(false);
+
   const divStyle = {
     display: "flex",
     justifyContent: "space-between",
   };
+
   const buttonStyle = {
     fontSize: "30px",
-    backgroundColor: "yellow",
+    backgroundColor: hover ? "blue" : "yellow",
     padding: "5px",
     borderRadius: "50%",
-    color: "blue",
-    border: "solid 5px blue",
+    color: hover ? "yellow" : "blue",
+    border: hover ? "solid 5px yellow" : "solid 5px blue",
     cursor: "pointer",
     fontWeight: "bolder",
   };
@@ -30,10 +35,20 @@ export function PageButtons({ pageNumber, setPageNumber }: Props) {
 
   return (
     <div style={divStyle}>
-      <button onClick={() => changePage(-1)} style={buttonStyle}>
+      <button
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
+        onClick={() => changePage(-1)}
+        style={buttonStyle}
+      >
         {"<="}
       </button>
-      <button onClick={() => changePage(1)} style={buttonStyle}>
+      <button
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
+        onClick={() => changePage(1)}
+        style={buttonStyle}
+      >
         {"=>"}
       </button>
     </div>
